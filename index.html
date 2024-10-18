@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Portfolio</title>
-    <!-- Link to your CSS file -->
+    <!-- Link to styles.CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,32 +25,84 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <!-- You can add a profile picture if you want -->
             <img src="images/profile_pic.jpg" alt="Your Name" class="profile-photo">
             <div class="bio">
-                <h3>Aryan Dharangaonkar</h3> <!-- Add your name here -->
-                <p>
-                    Hello! My name is Aryan Dharangaonkar, and I am a student at Texas A&M with a passion for Software Engineering. I have experience in multiple coding languages, such as Python, C++, HTML, etc.
-                </p>
-                <p>
-                    I enjoy working on projects that challenge me to learn new skills and allow me to apply my creativity in problem-solving. In my free time, I love playing sports such as basketball and table tennis. Feel free to check out my projects below or get in touch with me!
-                </p>
+                <h3>Aryan Dharangaonkar</h3>
+                <p>Hello! My name is Aryan Dharangaonkar, and I am a student at Texas A&M with a passion for Software Engineering...</p>
             </div>
-        </div>
-     </section>
-     
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of the project.</p>
-            <a href="#">View Project</a>
         </div>
     </section>
 
-    <!-- Add other sections like Skills, Resume, and Contact here -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>Description of the project.</p>
+                <a href="#">View Project</a>
+            </div>
+        </div>
+        <div class="view-all">
+            <a href="https://github.com/aryan-dhar" target="_blank" class="btn">View All Projects &#x2192;</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>C++</li>
+            <li>HTML & CSS</li>
+            <li>JavaScript</li>
+            <li>Git & GitHub</li>
+            <li>Software Development</li>
+        </ul>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Interested in learning more about my experience? Feel free to view or download my resume below.</p>
     
+        <!-- Link to view resume in browser -->
+        <a href="resume/AryanDharangaonkar.pdf" target="_blank" class="btn">View My Resume</a>
+    
+        <!-- Link to download resume -->
+        <a href="resume/AryanDharangaonkar.pdf" download class="btn">Download My Resume</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
+            <p>If you'd like to get in touch, feel free to reach out using the form below or via email at <a href="mailto:aryandhar1900@gmail.com">aryandhar1900@gmail.com</a>.</p>
+            <form id="contact-form" action="https://formspree.io/f/{your-form-id}" method="POST">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="social-media">
+                <p>Connect with me on:</p>
+                <a href="https://www.linkedin.com/in/aryan-dharangaonkar/" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/aryan-dhar" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>&copy; 2024 Aryan Dharangaonkar. All Rights Reserved.</p>
     </footer>
