@@ -23,11 +23,18 @@ const swiper = new Swiper('.swiper-container', {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute('href'));
+        const headerOffset = 80; // Adjust this value based on your header height
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
         });
     });
 });
+
 
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";

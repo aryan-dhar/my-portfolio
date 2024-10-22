@@ -335,14 +335,16 @@ footer p {
 }
 
 /* Add this to your existing styles.css file */
-
+/* color: #2e2c2c; */
 /* Skill Bars */
 .skill {
     margin-bottom: 20px;
+    color: #2e2c2c;
 }
 
 .skill i {
     margin-right: 10px;
+    color: #2e2c2c;
 }
 
 .skill-bar {
@@ -356,13 +358,20 @@ footer p {
     height: 100%;
     background-color: #ffb703;
     width: 0;
-    animation: fill-skill 2s forwards;
+    transition: width 2s ease-in-out;
 }
 
+/* Ensure the widths set in HTML are correctly applied */
+.skill-level[data-width] {
+    width: var(--skill-width);
+}
+
+/* Keyframes for initial animation */
 @keyframes fill-skill {
     0% { width: 0; }
-    100% { width: 90%; }
+    100% { width: var(--skill-width); }
 }
+
 
 /* Project Image Hover */
 .project-image {
@@ -385,6 +394,8 @@ footer p {
     justify-content: center;
     text-align: center;
     color: #fff;
+    padding: 0 20px; /* Optional: Reduce padding to fit smaller screens better */
+    overflow: hidden; /* Ensure no extra elements extend outside the section */
 }
 
 .floating-bubbles .bubble {
@@ -475,10 +486,28 @@ footer p {
 }
 
 .hero-content {
-    max-width: 700px;
-    padding: 2em;
+    max-width: 768px;
+    padding: 1.5em;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 0 10px;
+    }
+
+    .hero-content {
+        padding: 1em;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
 }
 
 .hero-section h1 {
