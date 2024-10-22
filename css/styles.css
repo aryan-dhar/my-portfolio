@@ -1,11 +1,21 @@
-/* Global Styles */
+/* Updated Color Scheme */
+:root {
+    --primary-color: #ffb703;
+    --secondary-color: #219ebc;
+    --accent-color: #8ecae6;
+    --background-color: #023047;
+    --text-color: #ffffff;
+    --light-text: #e1e1e1;
+}
+
+/* General Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    line-height: 1.6;
     scroll-behavior: smooth;
 }
 
@@ -53,12 +63,16 @@ nav ul li a:hover {
 /* Section Styles */
 section {
     padding: 4em 2em;
-    margin: 1em 0;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background: var(--background-color);
+    color: var(--light-text);
     max-width: 1100px;
     margin: 2em auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#skills, #resume, #contact {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
 }
 
 h2 {
@@ -190,6 +204,34 @@ p {
     content: ' →'; /* Adds the right-arrow after the button text */
 }
 
+/* Project Card */
+.project {
+    background: var(--secondary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.project:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Styling */
+.btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* Contact Section */
 #contact {
     background-color: #f9f9f9;
@@ -291,5 +333,268 @@ footer p {
         flex-basis: 100%; /* Full width on smaller screens */
     }
 }
+
+/* Add this to your existing styles.css file */
+
+/* Skill Bars */
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill i {
+    margin-right: 10px;
+}
+
+.skill-bar {
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: #ffb703;
+    width: 0;
+    animation: fill-skill 2s forwards;
+}
+
+@keyframes fill-skill {
+    0% { width: 0; }
+    100% { width: 90%; }
+}
+
+/* Project Image Hover */
+.project-image {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.project:hover .project-image {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.floating-bubbles .bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: floatUp 5s ease-in infinite;
+    opacity: 0.6;
+}
+
+/* Floating Elements */
+.floating-bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    width: 30px;
+    height: 30px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatUp 5s ease-in infinite;
+    transition: opacity 0.3s;
+}
+
+/* Adjust Sizes and Animation Durations */
+.bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.bubble:nth-child(2) {
+    width: 50px;
+    height: 50px;
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble:nth-child(3) {
+    width: 35px;
+    height: 35px;
+    left: 60%;
+    animation-duration: 5s;
+    animation-delay: 0s;
+}
+
+.bubble:nth-child(4) {
+    width: 25px;
+    height: 25px;
+    left: 75%;
+    animation-duration: 8s;
+    animation-delay: 1.5s;
+}
+
+.bubble:nth-child(5) {
+    width: 45px;
+    height: 45px;
+    left: 90%;
+    animation-duration: 6.5s;
+    animation-delay: 0.5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-1000px);
+        opacity: 0;
+    }
+}
+
+.hero-content {
+    max-width: 700px;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+    color: #d6d3ca;
+}
+
+.hero-section .btn {
+    background-color: #ffb703;
+    color: #fff;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.2em;
+}
+
+.hero-section .btn:hover {
+    background-color: #e89f02;
+}
+
+/* Project Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Gradient Background for Sections */
+#skills {
+    background: linear-gradient(135deg, #e9ecef, #ffffff);
+}
+
+#contact {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+}
+
+/* Button Pulse Animation */
+.hero-section .btn, .project a, .contact-content button {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section .btn::after, .project a::after, .contact-content button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 183, 3, 0.2);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.4s;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.hero-section .btn:hover::after, .project a:hover::after, .contact-content button:hover::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    font-size: 16px;
+    transition: opacity 0.3s;
+}
+
 
 

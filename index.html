@@ -5,12 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>My Portfolio</title>
-    <!-- Link to styles.CSS file -->
+    <!-- Link to your main CSS file -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Hero Section -->
+    <!-- Hero Section with Floating Elements -->
+<section id="hero" class="hero-section rellax" data-rellax-speed="-3">
+    <div class="floating-bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <div class="hero-content">
+        <h1>Hello, I'm Aryan Dharangaonkar</h1>
+        <p>Aspiring Software Engineer & Web Developer</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+</section>
+
+
+    <!-- Header -->
     <header>
-        <h1>Welcome to My Portfolio</h1>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -22,10 +45,11 @@
         </nav>
     </header>
 
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="images/profile_pic.jpg" alt="Your Name" class="profile-photo">
+            <img src="images/profile_pic.jpg" alt="Aryan Dharangaonkar" class="profile-photo">
             <div class="bio">
                 <h3>Aryan Dharangaonkar</h3>
                 <p>Hello! My name is Aryan Dharangaonkar, and I am a student at Texas A&M with a passion for Software Engineering...</p>
@@ -33,23 +57,24 @@
         </div>
     </section>
 
-    <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects" data-aos="fade-up">
         <h2>Projects</h2>
         <div class="projects-container">
-            <div class="project">
-                <h3>Project 1</h3>
+            <div class="project" onclick="openModal('project1-modal')">
+                <img src="images/project1_thumbnail.jpg" alt="Project 1" class="project-image">
+                <h3>HowdyHelp</h3>
                 <p>Description of the project.</p>
-                <a href="#">View Project</a>
             </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of the project.</p>
-                <a href="#">View Project</a>
+            <div class="project" onclick="openModal('project2-modal')">
+                <img src="images/project2_thumbnail.jpg" alt="Project 2" class="project-image">
+                <h3>Personal Portfolio</h3>
+                <p>The website you're on right now!!</p>    
             </div>
-            <div class="project">
-                <h3>Project 3</h3>
+            <div class="project" onclick="openModal('project3-modal')">
+                <img src="images/project3_thumbnail.jpg" alt="Project 3" class="project-image">
+                <h3>Pente Game</h3>
                 <p>Description of the project.</p>
-                <a href="#">View Project</a>
             </div>
         </div>
         <div class="view-all">
@@ -57,32 +82,59 @@
         </div>
     </section>
 
+    <!-- Project Modal Templates -->
+    <div id="project1-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project1-modal')">&times;</span>
+            <h2>Project 1</h2>
+            <p>Detailed information about Project 1. You can describe the technologies, features, and other aspects here.</p>
+            <a href="#">View Live Project</a>
+        </div>
+    </div>
+    <div id="project2-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project2-modal')">&times;</span>
+            <h2>Project 2</h2>
+            <p>Detailed information about Project 2. You can describe the technologies, features, and other aspects here.</p>
+            <a href="#">View Live Project</a>
+        </div>
+    </div>
+    <div id="project3-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project3-modal')">&times;</span>
+            <h2>Project 3</h2>
+            <p>Detailed information about Project 3. You can describe the technologies, features, and other aspects here.</p>
+            <a href="#">View Live Project</a>
+        </div>
+    </div>
+
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" data-aos="fade-up">
         <h2>Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>C++</li>
-            <li>HTML & CSS</li>
-            <li>JavaScript</li>
-            <li>Git & GitHub</li>
-            <li>Software Development</li>
-        </ul>
+        <div class="skill">
+            <i class="fab fa-python"></i> Python
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 90%;"></div>
+            </div>
+        </div>
+        <div class="skill">
+            <i class="fab fa-js-square"></i> JavaScript
+            <div class="skill-bar">
+                <div class="skill-level" style="width: 80%;"></div>
+            </div>
+        </div>
     </section>
 
     <!-- Resume Section -->
-    <section id="resume">
+    <section id="resume" data-aos="fade-up">
         <h2>Resume</h2>
         <p>Interested in learning more about my experience? Feel free to view or download my resume below.</p>
-    
-        <!-- Link to view resume in browser -->
-        <a href="resume/AryanDharangaonkar.pdf" target="_blank" class="btn">View My Resume</a>
-    
-        <!-- Link to download resume -->
-        <a href="resume/AryanDharangaonkar.pdf" download class="btn">Download My Resume</a>
+        <a href="resume/AryanDharangaonkarResume.pdf" target="_blank" class="btn">View My Resume</a>
+        <a href="resume/AryanDharangaonkarResume.pdf" download class="btn">Download My Resume</a>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <div class="contact-content">
             <p>If you'd like to get in touch, feel free to reach out using the form below or via email at <a href="mailto:aryandhar1900@gmail.com">aryandhar1900@gmail.com</a>.</p>
@@ -97,17 +149,21 @@
             </form>
             <div class="social-media">
                 <p>Connect with me on:</p>
-                <a href="https://www.linkedin.com/in/aryan-dharangaonkar/" target="_blank">LinkedIn</a> |
-                <a href="https://github.com/aryan-dhar" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/aryan-dharangaonkar/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+                <a href="https://github.com/aryan-dhar" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Aryan Dharangaonkar. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" onclick="scrollToTop()">Top</button>
 
+    <!-- JavaScript Files -->
+    <script src="dist/bundle.js"></script>
 </body>
 </html>
