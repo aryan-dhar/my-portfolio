@@ -79,5 +79,22 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+document.querySelectorAll('.view-more-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const projectDescription = button.parentElement;
+        const fullDescription = projectDescription.querySelector('.full-description');
+        
+        if (fullDescription.style.display === 'none') {
+            fullDescription.style.display = 'block';
+            button.textContent = "View Less";
+        } else {
+            fullDescription.style.display = 'none';
+            button.textContent = "View More";
+        }
+    });
+});
+
+
+
 
 

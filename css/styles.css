@@ -140,18 +140,19 @@ p {
 .projects-container {
     display: flex;
     gap: 20px;
-    justify-content: space-between;
-    flex-wrap: wrap; /* Allows the projects to wrap if the screen is small */
+    justify-content: center; /* Center align the two projects */
+    flex-wrap: wrap; /* Ensure responsiveness */
 }
 
 .project {
-    flex-basis: 30%;
+    flex-basis: 45%; /* Adjust the width for two items */
     background-color: #fafafa;
     padding: 1em;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 1.5em; /* Spacing between rows */
+    margin-bottom: 1.5em;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project h3 {
@@ -213,8 +214,8 @@ p {
 }
 
 .project:hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Button Styling */
@@ -624,6 +625,40 @@ footer p {
     font-size: 16px;
     transition: opacity 0.3s;
 }
+
+/* Project Description Styling */
+.project-description {
+    position: relative;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.short-description {
+    max-height: 100px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.full-description {
+    display: none; /* Hide the full description initially */
+    margin-top: 10px;
+}
+
+.view-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1em;
+    padding: 0;
+    display: block;
+    margin-top: 5px;
+}
+
+.view-more-btn:hover {
+    color: var(--secondary-color);
+}
+
 
 
 
