@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Computer Vision Project</title>
+    <title>Computer Vision Project - Finger Count Detection</title>
     <!-- Link to your main CSS file -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Include Font Awesome for icons -->
@@ -24,10 +24,60 @@
     </header>
 
     <!-- Blog Post Section -->
-    <section id="blog-post" class="blog-post">
-        <h1>Computer Vision Project</h1>
-        <p>Welcome to the detailed overview of my Computer Vision Project! This page will document the journey of creating and refining this project, including the tools and techniques used, challenges faced, and solutions implemented.</p>
-        <p>Stay tuned as I update this page with more information about the project and my learning experience!</p>
+    <section id="opencv-page" class="blog-post">
+        <h1>Finger Count Detection Using OpenCV</h1>
+
+        <article>
+            <h2>Introduction</h2>
+            <p>Creating a robust system to detect the number of fingers a user holds up using a camera has been an exciting and rewarding journey. This project demonstrates my experience with OpenCV and Python, from initial exploration to the final working code. Along the way, I encountered numerous challenges, explored different approaches, debugged unexpected behaviors, and ultimately succeeded in building a solution I’m proud of.</p>
+
+            <h2>How It All Began</h2>
+            <p>The idea for this project stemmed from a curiosity about computer vision and its real-world applications. I wanted to explore how a camera could interact with hand gestures, specifically counting fingers. This concept led me to OpenCV, a powerful library for image processing, and cvzone, a library designed for tasks like hand tracking.</p>
+
+            <h2>The Evolution of the Code</h2>
+            <h3>Initial Attempt</h3>
+            <p>My first code used only OpenCV to convert video frames into HSV color space, threshold the image, and find contours to detect the hand. While this taught me the basics of image processing, it was too basic for reliable finger counting.</p>
+
+            <!-- Image 1 with View Code Button -->
+            <div class="project-image-section">
+                <img src="images/finger-count-attempt.jpg" alt="Initial Attempt Example">
+                <a href="https://github.com/aryan-dhar/finger-count-detection" target="_blank" class="btn">View Code</a>
+            </div>
+
+            <h3>Integrating cvzone</h3>
+            <p>Discovering cvzone was a game changer. Its <code>HandTrackingModule</code> simplified hand detection and included the <code>fingersUp</code> method, which provided an intuitive way to count fingers.</p>
+
+            <h3>Debugging Misidentified Hands</h3>
+            <p>Flipped camera images led to incorrect identification of left and right hands. Adding logic to swap the labels fixed this.</p>
+
+            <h3>Adding Visual Tracking</h3>
+            <p>To improve user experience, I added visual lines that followed each finger.</p>
+
+            <h3>Final Optimization</h3>
+            <p>The final version focused on simplicity, using flipped camera feed and minimal computational overhead.</p>
+
+            <!-- Image 2 with View Code Button -->
+            <div class="project-image-section">
+                <img src="images/finger-count-final.jpg" alt="Final Optimization Example">
+                <a href="https://github.com/aryan-dhar/finger-count-detection" target="_blank" class="btn">View Code</a>
+            </div>
+
+            <h2>Challenges and How I Overcame Them</h2>
+            <ul>
+                <li><strong>Background Noise:</strong> Using cvzone’s <code>findHands</code> significantly improved accuracy.</li>
+                <li><strong>Misidentification of Hand Type:</strong> Adjusting labels resolved flipped image issues.</li>
+                <li><strong>Performance:</strong> Optimizing code by reducing frame processing rate solved performance issues.</li>
+            </ul>
+
+            <h2>What I Learned</h2>
+            <p>This project taught me the importance of exploring specialized libraries, debugging techniques for real-time systems, and presenting technical solutions with interactive visuals for better user experience.</p>
+
+            <h2>What I Would Change</h2>
+            <p>If I were to revisit this project, I would use multi-threading for faster frame processing, integrate TensorFlow or PyTorch for custom hand detection, and allow multi-user detection.</p>
+
+            <h2>Conclusion</h2>
+            <p>Building the Finger Count Detection project has been a fulfilling experience. It showcases the power of computer vision and inspires me to explore further in this exciting field.</p>
+        </article>
     </section>
 
     <!-- Footer -->
