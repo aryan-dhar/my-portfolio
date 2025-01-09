@@ -751,3 +751,148 @@ footer p {
     background-color: #e89f02; /* Darker hover state for buttons */
     color: #fff;
 }
+
+
+/* Scoped Styles for Robot Page */
+#robot-page {
+    padding: 2em 1em;
+    font-family: 'Poppins', sans-serif;
+    color: #2c2c2c; /* Darker text for readability */
+    background: #f9f9f9; /* Light background for contrast */
+    line-height: 1.8;
+}
+
+/* Container */
+#robot-page .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1em;
+    background: #ffffff; /* White background for the blog content */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Headings */
+#robot-page h2, #robot-page h3 {
+    color: #1a1a1a; /* Darker headers for emphasis */
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+#robot-page h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+#robot-page h2 {
+    font-size: 2em;
+    margin-top: 1.5em;
+}
+
+#robot-page h3 {
+    font-size: 1.5em;
+    margin-top: 1.2em;
+}
+
+/* Paragraphs */
+#robot-page p {
+    font-size: 1.2em;
+    color: #444; /* Medium-dark gray for better readability */
+    margin-bottom: 1.5em;
+}
+
+/* Lists */
+#robot-page ul {
+    margin-left: 1.5em;
+    padding-left: 1em;
+}
+
+#robot-page ul li {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+}
+
+/* Ordered Lists */
+#robot-page ol {
+    margin-left: 1.5em;
+    padding-left: 1em;
+}
+
+#robot-page ol li {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+}
+
+/* Images */
+#robot-page figure {
+    margin: 2em 0;
+    text-align: center;
+}
+
+#robot-page .blog-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for emphasis */
+}
+
+#robot-page figcaption {
+    font-size: 1em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Video Section */
+#robot-page .video-container {
+    margin: 2em 0;
+    text-align: center;
+}
+
+#robot-page video {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Back to Projects Button */
+.back-to-projects {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.back-to-projects .btn {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    background-color: #0078d7;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-projects .btn:hover {
+    background-color: #005bb5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #robot-page h1 {
+        font-size: 2em;
+    }
+
+    #robot-page h2 {
+        font-size: 1.8em;
+    }
+
+    #robot-page p {
+        font-size: 1.1em;
+    }
+
+    #robot-page .container {
+        padding: 1em;
+    }
+}

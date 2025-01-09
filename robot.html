@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Robotics -- Color Sorting System</title>
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Blog Post Section -->
+    <section id="robot-page" class="blog-post">
+        <div class="container">
+            <h1>Color Sorting Detection Using OpenCV and Embedded Software</h1>
+            <article>
+                <h2>Introduction</h2>
+                <p>
+                    Building a color-sorting robot using a Raspberry Pi was a challenging yet rewarding journey that combined my interests in embedded systems, computer vision, and robotics. In this project, I developed a robot capable of detecting red, green, and blue blocks using a camera and sorting them into designated locations.
+                </p>
+
+                <h2>The Idea</h2>
+                <p>
+                    The goal was straightforward: create a robotic system that could visually identify blocks of specific colors and autonomously place them into predefined zones. While it sounded simple on paper, the implementation required careful planning and iterative problem-solving.
+                </p>
+                <p>
+                    This project aimed to combine the power of Python and OpenCV for computer vision with the precision of servo motors controlled by embedded software. The robot's brain, a Raspberry Pi, would handle all tasks from image processing to controlling the robotic arm's movements.
+                </p>
+
+                <h2>Technologies and Tools</h2>
+                <h3>Hardware</h3>
+                <ul>
+                    <li>Raspberry Pi</li>
+                    <li>Hiwonder robotic arm</li>
+                    <li>Camera module</li>
+                    <li>Servo motors</li>
+                    <li>Ultrasonic sensor (for proximity detection)</li>
+                </ul>
+                <h3>Software</h3>
+                <ul>
+                    <li><strong>Python</strong> for the main logic</li>
+                    <li><strong>OpenCV</strong> for computer vision tasks</li>
+                    <li><strong>Hiwonder SDK</strong> for hardware integration</li>
+                    <li><strong>YAML</strong> for configuration management</li>
+                    <li><strong>Multithreading</strong> for smooth operation</li>
+                </ul>
+
+                <h2>The Process</h2>
+                <h3>1. Setting Up the Hardware</h3>
+                <p>
+                    Integrating the Raspberry Pi with the robotic arm and camera was the first step. I used the Hiwonder SDK to communicate with the servo motors and ultrasonic sensor. The challenge here was ensuring that all components worked harmoniously, especially under real-time constraints.
+                </p>
+
+                <h3>2. Writing the Code</h3>
+                <p>
+                    The heart of the project lies in the Python script, which can be broken down into three main tasks:
+                </p>
+                <ol>
+                    <li><strong>Color Detection:</strong> Using OpenCV, I converted the camera feed to the LAB color space for better color segmentation. Configured thresholds for detecting red, green, and blue using YAML files, making the system modular and easy to tweak.</li>
+                    <li><strong>Robotic Arm Movement:</strong> Implemented inverse kinematics to control the robotic arm’s movement with precision. Programmed the arm to carry blocks and place them in corresponding locations based on their detected color.</li>
+                    <li><strong>System Feedback:</strong> Added RGB lights to indicate the detected color. Integrated a buzzer for auditory feedback.</li>
+                </ol>
+                <figure class="image-pair">
+                    <div class="image-container">
+                        <img src="images/noColor.png" alt="OpenCV Camera Feed Example 1" class="blog-image">
+                        <figcaption>What the camera shows when there's no block in frame.</figcaption>
+                    </div>
+                    <div class="image-container">
+                        <img src="images/colorDetected.png" alt="OpenCV Camera Feed Example 2" class="blog-image">
+                        <figcaption>What the camera shows when it detects a block and its color.</figcaption>
+                    </div>
+                </figure>                
+
+                <h3>3. Debugging and Troubleshooting</h3>
+                <p>
+                    During development, I encountered several challenges:
+                </p>
+                <ul>
+                    <li><strong>Color Detection Failures:</strong> Initial thresholds for color detection resulted in frequent false positives. This was resolved by refining the LAB color thresholds and adding noise reduction techniques.</li>
+                    <li><strong>Servo Motor Calibration:</strong> Ensuring the robotic arm’s movements were accurate required extensive calibration and trial-and-error adjustments.</li>
+                    <li><strong>Real-Time Performance:</strong> The system lagged when processing camera frames. Multithreading helped divide tasks like image processing and robotic control, improving responsiveness.</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+                <p>
+                    This project taught me the importance of modularity, perseverance, and careful integration between hardware and software. It provided invaluable experience in real-world problem-solving.
+                </p>
+
+                <h2>Future Improvements</h2>
+                <ul>
+                    <li><strong>Fully Autonomous Sorting:</strong> Adding a conveyor belt for full automation.</li>
+                    <li><strong>Improved Detection:</strong> Enhancing lighting conditions and detection accuracy.</li>
+                    <li><strong>Expanding Functionality:</strong> Supporting additional shapes and colors for sorting.</li>
+                </ul>
+
+                <h2>Video of the Final Implementation</h2>
+                <div class="video-container">
+                    <video controls>
+                        <source src="videos/color_sorting_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Back to Projects Button -->
+    <div class="back-to-projects">
+        <a href="index.html#projects" class="btn">Back to Projects</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aryan Dharangaonkar. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
