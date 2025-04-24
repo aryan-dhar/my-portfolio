@@ -65,32 +65,36 @@
     <h2>Projects</h2>
     <div class="projects-container">
         <!-- Project 1 -->
-        <a href="https://github.com/aryan-dhar/HowdyHack24" target="_blank" class="project">
+        <div class="project">
             <img src="images/project1_thumbnail.jpg" alt="HowdyHelp" class="project-image">
             <h3>HowdyHelp</h3>
             <p>HowdyHelp is a full-stack web application that serves as an anonymized peer support forum focusing on mental health. Built using Node.js, Express, MongoDB, and more.</p>
-        </a>
+            <a href="https://github.com/aryan-dhar/HowdyHack24" target="_blank" class="project-btn">View Full Project</a>
+        </div>
 
         <!-- Project 2 -->
-        <a href="computer-vision.html" target="_blank" class="project">
+        <div class="project">
             <img src="images/opencvprojectcover.png" alt="Computer Vision Project" class="project-image">
             <h3>Computer Vision Project</h3>
             <p>This project explores the power of computer vision techniques. Click to learn more about the journey and implementation details.</p>
-        </a>
+            <a href="computer-vision.html" target="_blank" class="project-btn">View Full Project</a>
+        </div>
 
         <!-- Project 3 -->
-        <a href="robot.html" target="_blank" class="project">
+        <div class="project">
             <img src="images/robotprojectcover.jpg" alt="Robot Sorting System" class="project-image">
             <h3>Robot Sorting System</h3>
             <p>A Raspberry Pi-controlled robot equipped with a camera to detect and sort blocks by color. Uses computer vision to identify red, green, and blue blocks.</p>
-        </a>
+            <a href="robot.html" target="_blank" class="project-btn">View Full Project</a>
+        </div>
 
         <!-- Project 4 -->
-        <a href="networkSystem.html" target="_blank" class="project">
-            <img src="images/networksystemprojectcover.jpg" alt="Network System Project" class="project-image">
-            <h3>Network Monitoring System</h3>
-            <p>Designed a network monitoring system using Cisco Packet Tracer and Python. Analyzed traffic flow and identified network vulnerabilities.</p>
-        </a>
+        <div class="project">
+            <img src="images/voicelock.jpg" alt="VoiceLock AI" class="project-image">
+            <h3>VoiceLock AI</h3>
+            <p>VoiceLock AI is a voice-based authentication system that uses AI to verify user identities. It leverages speech recognition and natural language processing to authenticate users.</p>
+            <a href="voicelock.html" target="_blank" class="project-btn">View Full Project</a>
+        </div>
     </div>
     <!-- View All Projects Button -->
     <div class="view-all">
@@ -164,8 +168,8 @@
     <section id="resume" data-aos="fade-up">
         <h2>Resume</h2>
         <p>Interested in learning more about my experience? Feel free to view or download my resume below.</p>
-        <a href="resume/AryanDharangaonkarResume.pdf" target="_blank" class="btn">View My Resume</a>
-        <a href="resume/AryanDharangaonkarResume.pdf" download class="btn">Download My Resume</a>
+        <a href="resume/AryanDharangaonkarResume(H).pdf" target="_blank" class="btn">View My Resume</a>
+        <a href="resume/AryanDharangaonkarResume(H).pdf" download class="btn">Download My Resume</a>
     </section>
 
     <!-- Contact Section -->
@@ -200,5 +204,36 @@
 
     <!-- JavaScript Files -->
     <script src="dist/bundle.js"></script>
+
+    <!-- Add this right before the closing </body> tag -->
+    <div id="admin-trigger" style="position: fixed; bottom: 0; right: 0; width: 20px; height: 20px; cursor: default;"></div>
+
+    <!-- Admin Modal -->
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="admin-login">
+                <h2>Admin Login</h2>
+                <input type="password" id="admin-password" placeholder="Enter password">
+                <button id="login-btn">Login</button>
+            </div>
+            <div id="admin-panel" style="display: none;">
+                <h2>Project Management</h2>
+                <button id="add-project-btn">Add New Project</button>
+                <div id="project-form" style="display: none;">
+                    <h3>Add New Project</h3>
+                    <input type="text" id="project-title" placeholder="Project Title">
+                    <textarea id="project-description" placeholder="Project Description"></textarea>
+                    <input type="text" id="project-link" placeholder="Project Link">
+                    <input type="text" id="project-image" placeholder="Image URL">
+                    <button id="submit-project">Add Project</button>
+                </div>
+                <div id="existing-projects">
+                    <h3>Existing Projects</h3>
+                    <!-- Projects will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

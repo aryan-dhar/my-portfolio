@@ -11,6 +11,8 @@
   "description": "",
   "dependencies": {
     "aos": "^2.3.4",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2",
     "rellax": "^1.12.1",
     "swiper": "^11.1.14"
   },

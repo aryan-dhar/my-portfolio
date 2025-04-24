@@ -153,6 +153,9 @@ p {
     text-align: center;
     margin-bottom: 1.5em;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
 }
 
 .project h3 {
@@ -895,4 +898,96 @@ footer p {
     #robot-page .container {
         padding: 1em;
     }
+}
+
+/* Project Button Styling */
+.project-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1em;
+    transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.project-btn:hover {
+    background-color: #e89f02;
+    transform: translateY(-2px);
+}
+
+/* Admin Modal Styles */
+#admin-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#admin-modal .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+#admin-modal input,
+#admin-modal textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#admin-modal button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+#admin-modal button:hover {
+    background-color: var(--secondary-color);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+#existing-projects .project-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.delete-project {
+    background-color: #ff4444 !important;
+    float: right;
+}
+
+#admin-trigger {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    cursor: default;
+    /* Temporarily add this line to see the button during development */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Remove the background-color line when you're done testing */
 }
